@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = "ADRFMediationKit"
-  s.version = "0.7.0.06291"
+  s.version = "0.7.0.06291-noidfa"
   s.summary = "A short description of ADRFMediationKit."
   s.license = {"type"=>"MIT", "file"=>"LICENSE"}
   s.authors = {"business@ssdmobile.cn"=>"business@ssdmobile.cn"}
@@ -16,5 +16,5 @@ Pod::Spec.new do |s|
   s.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
   s.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
   s.ios.deployment_target    = '9.0'
-  s.vendored_frameworks = ['ADRFMediationKit/Classes/ADRFMediationKit.xcframework','ADRFMediationKit/Classes/ADRFMediationKitIDFA.xcframework']
+  s.vendored_frameworks = ['ADRFMediationKit/Classes/ADRFMediationKit.xcframework']
 end
