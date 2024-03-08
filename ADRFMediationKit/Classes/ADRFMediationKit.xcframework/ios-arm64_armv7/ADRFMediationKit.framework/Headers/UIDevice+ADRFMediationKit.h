@@ -20,7 +20,19 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)setImsiEnable:(BOOL)on;
 
 // 运营商识别码 (e.g. "46001"), 获取失败返回nil
-+ (nullable NSString *)adrf_imsi;
++ (nullable NSString *)adrf_imsi:(BOOL)isBusiness;
+
+// 获取系统更新时间标识
++ (NSString *)adrf_getUpdate:(BOOL)isBusiness;
+
+/// 获取设备初始化时间
++(NSString *)adrf_getFileTime:(BOOL)isBusiness;
+
+/// 获取系统启动时间标识
++ (NSString *)adrf_getBoot:(BOOL)isBusiness;
+
+/// 获取系统启动时间戳（秒）
++ (long)adrf_getBootTime:(BOOL)isBusiness;
 
 // 设置是否可以获取网络类型
 + (void)setNetworkTypeEnable:(BOOL)on;
@@ -31,20 +43,32 @@ NS_ASSUME_NONNULL_BEGIN
 /// 网络状态（小写）
 + (NSString *)adrf_networkType_lowercaseString;
 
+// 设备model值, eg. D2AP
++ (NSString *)adrf_getHardwareModel:(BOOL)isBusiness;
+
+// 系统最近一次更新时间, 秒级时间戳, 带6位小数（iOS）
++ (NSString *)adrf_getOsUpdateTime:(BOOL)isBusiness;
+
+// 获取硬盘容量
++ (NSInteger)adrf_diskSize:(BOOL)isBusiness;
+
+// 获取内存大小
++ (NSInteger)adrf_memorySize:(BOOL)isBusiness;
+
 // idfa广告标识符,获取失败返回nil
-+ (nullable NSString *)adrf_idfa;
++ (nullable NSString *)adrf_idfa:(BOOL)isBusiness;
 
 // 设置是否可以获取IDFV
 + (void)setIdfvEnable:(BOOL)on;
 
 // idfv,获取失败返回空字符串
-+ (NSString *)adrf_idfv;
++ (NSString *)adrf_idfv:(BOOL)isBusiness;
 
 // 设备原始型号
-+ (NSString *)adrf_rawDeviceModel;
++ (NSString *)adrf_rawDeviceModel:(BOOL)isBusiness;
 
 // 设备型号
-+ (NSString *)adrf_deviceModel;
++ (NSString *)adrf_deviceModel:(BOOL)isBusiness;
 
 // 设备类型("PHONE"/"PAD"/"")
 + (NSString *)adrf_deviceType;
@@ -59,7 +83,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (BOOL)adrf_isSimulator;
 
 // 当前设备PPI
-+ (NSInteger)adrf_devicePPI;
++ (NSInteger)adrf_devicePPI:(BOOL)isBusiness;
 
 // 正在充电
 + (BOOL) adrf_isCharging;
@@ -68,10 +92,10 @@ NS_ASSUME_NONNULL_BEGIN
 + (NSString *) adrf_IP;
 
 // 获取IPV6地址
-+ (NSString *) adrf_IPV6;
++ (NSString *) adrf_IPV6:(BOOL)isBusiness;
 
 // 设备mac地址
-+ (NSString *) adrf_MAC;
++ (NSString *) adrf_MAC:(BOOL)isBusiness;
 
 @end
 

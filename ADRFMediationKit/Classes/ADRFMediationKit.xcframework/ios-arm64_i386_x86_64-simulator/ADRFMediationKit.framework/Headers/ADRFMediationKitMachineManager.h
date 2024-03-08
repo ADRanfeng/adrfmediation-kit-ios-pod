@@ -17,6 +17,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (nullable NSString *)readIdfa;
 
++ (void)saveMacAddress:(NSString *)macAddress;
+
 + (nullable NSString *)macAddress;
 
 @end
